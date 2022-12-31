@@ -110,6 +110,23 @@ ul{
     }
 }
 
+//MIXINS GENERALES
+
+@mixin flex($display: flex, $direction: row, $justify: center, $align: center, $wrap: nowrap){
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+ul{
+    @include flex( $justify: space-around, $align: flex-start, $wrap: wrap);
+    @include mobile(){
+        @include flex($direction: column, $justify: space-around, $align: flex-start, $wrap: wrap);
+    }
+}
+
 
 
 
