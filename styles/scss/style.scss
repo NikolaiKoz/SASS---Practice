@@ -19,6 +19,7 @@ $colores: (
   "blue": #0000ff,
   "green": #00ff00,
   "normal": Verdana,
+  "white": #ffffff,
 );
 
 h1{
@@ -127,6 +128,58 @@ ul{
     }
 }
 
+@mixin grid($display: grid, $template: 1fr 1fr 1fr, $gap: 1em, $justify: center, $align: center){
+    display: $display;
+    grid-template-columns: $template;
+    grid-gap: $gap;
+    justify-items: $justify;
+    align-items: $align;
 
+    @media screen and (max-width: 400px){
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+main{
+    @include grid($template: 1fr 1fr 1fr, $gap: 1em, $justify: center, $align: center);
+}
+
+//MIXIN PARA RESPONSIVE DESIGN
+
+@mixin responsive($breakpoint){
+    @if $breakpoint == phone{
+        @media screen and (max-width: 400px){
+            @content;
+        }
+    } @else if $breakpoint == tablet{
+        @media screen and (max-width: 768px){
+            @content;
+        }
+    } @else if $breakpoint == desktop{
+        @media screen and (max-width: 1024px){
+            @content;
+        }
+    } @else if $breakpoint == large-desktop{
+        @media screen and (max-width: 1200px){
+            @content;
+        }
+    }
+}
+
+main{
+    @include responsive(phone){
+        background-color: map-get($colores , "green");
+    }
+    @include responsive(tablet){
+        background-color: map-get($colores , "blue");
+    }
+    @include responsive(desktop){
+        background-color: map-get($colores , "red");
+    }
+    @include responsive(large-desktop){
+        background-color: map-get($colores , "white");
+    }
+}
 
 

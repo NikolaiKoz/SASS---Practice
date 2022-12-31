@@ -60,4 +60,39 @@ ul {
   }
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  justify-items: center;
+  align-items: center;
+}
+@media screen and (max-width: 400px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    background-color: #00ff00;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    background-color: #0000ff;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main {
+    background-color: #ff0000;
+  }
+}
+@media screen and (max-width: 1200px) {
+  main {
+    background-color: #ffffff;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
