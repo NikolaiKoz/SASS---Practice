@@ -10,4 +10,37 @@ h1 p {
   font-family: Verdana;
 }
 
+body {
+  color: #000000;
+  background-color: #00ff00;
+  font-family: Verdana;
+}
+
+header {
+  color: #ff0000;
+}
+header nav {
+  color: #000000;
+  background-color: #00ff00;
+}
+header nav ul {
+  color: #000000;
+  background-color: #ff0000;
+}
+
+header {
+  color: #ff0000;
+  background-color: #00ff00;
+  font-family: Verdana;
+}
+
+ul {
+  font-size: 3em;
+}
+@media screen and (max-width: 400px) {
+  ul {
+    font-size: 1em;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

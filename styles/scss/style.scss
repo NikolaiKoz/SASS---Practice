@@ -28,3 +28,88 @@ h1{
         font-family: map-get($colores , "normal");
     }
 }
+
+//FUNCIONES O MEJOR DICHO MIXINS
+
+//MIXIN SIN ARGUMENTOS
+
+@mixin primerMixin(){
+    color: #000000;
+    background-color: map-get($colores , "green");
+    font-family: Verdana;
+}
+
+body{
+    @include primerMixin();
+}
+
+//MIXIN SIN PARENTESIS, SE UTILIZA CUANDO NO SE NECESITA ARGUMENTOS EN EL MIXIN.
+
+@mixin segundoMixin{
+    color: #000000;
+    background-color: map-get($colores , "green");
+    font-family: Verdana;
+}
+
+//MIXIN CON ARGUMENTOS
+
+@mixin tercerMixin($argumento1){
+    color: $argumento1;
+}
+
+//MIXIN CON VARIOS ARGUMENTOS
+
+@mixin cuartoMixin($argumento1, $argumento2){
+    color: $argumento1;
+    background-color: $argumento2;
+}
+
+//MIXIN CON ARGUMENTOS POR DEFECTO
+
+@mixin quintoMixin($argumento1: #000000, $argumento2: #ff0000){
+    color: $argumento1;
+    background-color: $argumento2;
+}
+
+header{
+    @include tercerMixin($color-red);
+
+    nav{
+        @include cuartoMixin($color-black, map-get($colores , "green"));
+
+        ul{
+            @include quintoMixin();
+        }
+    }
+}
+
+//MIXIN CON ARGUMENTOS POR DEFECTO Y ARGUMENTOS OPCIONALES
+
+@mixin sextoMixin($argumento1: #000000, $argumento2: #ff0000, $argumento3: #0000ff){
+    color: $argumento1;
+    background-color: $argumento2;
+    font-family: $argumento3;
+}
+
+header{
+    @include sextoMixin($color-red, map-get($colores , "green"), Verdana);
+}
+
+//MIXIN CON ARGUMENTOS LA REGLA @CONTENT
+
+@mixin mobile(){
+    @media screen and (max-width: 400px){
+        @content;
+    }
+}
+
+ul{
+    font-size: 3em;
+    @include mobile(){
+        font-size: 1em;
+    }
+}
+
+
+
+
