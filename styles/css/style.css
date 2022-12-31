@@ -1,11 +1,13 @@
 h1 {
-  background-color: red;
+  color: #000000;
+  background-color: #ff0000;
+  font-family: Helvetica;
 }
+
 h1 p {
-  color: blue;
-}
-h1 div {
-  color: green;
+  color: #00ff00;
+  background-color: #0000ff;
+  font-family: Verdana;
 }
 
 /*# sourceMappingURL=style.css.map */
