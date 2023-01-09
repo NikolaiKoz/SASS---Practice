@@ -110,3 +110,6 @@ Regarding the organization of the style files and folders, SUITCSS does not have
 
 
 - [x] <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md" title="suit css documentation" target="_blank">SUIT CSS naming conventions</a>
+
+
+**Como crear un script para crear la estructura de carpetas...**
